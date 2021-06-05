@@ -123,7 +123,7 @@ totalCart()
   },
   update(obj) {
     const index = CART.contents.findIndex((element) => element._id == obj._id);
-    if (obj.qty === 0) {
+    if (obj.qty === 0, obj.qty === null) {
       CART.contents.splice(index, 1);
       document.querySelector(".cart-qty").textContent= `${CART.contents[index].qty}`;
     } else {
