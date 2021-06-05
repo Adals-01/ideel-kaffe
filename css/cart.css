@@ -18,6 +18,10 @@
     
 }  
 
+.minus {
+  margin-right: 0;
+}
+
 .x {
  height: 0.5em;
     width: 0.5em; 
@@ -138,6 +142,7 @@
 
   .display-flex > * {
       width: 100%;
+      margin-bottom: 1.4em;
   }
 
   .cart .price-each {
