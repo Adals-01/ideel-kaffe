@@ -1,6 +1,6 @@
 /* 
-localStorage.clear(); */
-/* window.onscroll = function() {myFunction()};
+
+window.onscroll = function() {myFunction()};
 
 
 var navbar = document.getElementById("cart");
@@ -23,6 +23,7 @@ function hideCart() {
   console.log("hideCart()");
   this.removeEventListener("click", hideCart);
   document.querySelector("#cart").classList.add("hidden");
+  document.querySelector(".cart-icon").addEventListener("click", showCart);
   document.querySelector(".cart-icon").addEventListener("click", showCart);
 }
 
@@ -57,7 +58,7 @@ const CART = {
 totalCart()
     const cartcontentEl = document.querySelector(".cart-content");
     cartcontentEl.innerHTML = "";
-    document.querySelector(".cartTotal").textContent = CART.contents.length;
+
     if (CART.contents.length === 0) {
       cartcontentEl.innerHTML = "<h4> THE CART IS EMPTY</h4>";
     } else {
@@ -125,7 +126,6 @@ totalCart()
     const index = CART.contents.findIndex((element) => element._id == obj._id);
     if (obj.qty === 0) {
       CART.contents.splice(index, 1);
-      document.querySelector(".cart-qty").textContent= `${CART.contents[index].qty}`;
     } else {
       CART.contents[index].qty = obj.qty;
     }
@@ -163,9 +163,9 @@ function totalCart() {
   for (var index in CART.contents) {
     totalCost+= CART.contents[index].price * CART.contents[index].qty;
  document.querySelector(".cartTotal").textContent=`${totalCost}`;
- document.querySelector(".cart-qty").textContent= `${CART.contents[index].qty}`}
+ document.querySelector(".cart-qty1").textContent= `${CART.contents[index].qty}`;
+ document.querySelector(".cart-qty2").textContent= `${CART.contents[index].qty}`;}
   return totalCost;
 }
-  
 
 CART.init();
